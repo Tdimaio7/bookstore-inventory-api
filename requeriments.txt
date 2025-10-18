@@ -1,4 +1,8 @@
+# Framework web
 Django>=4.2
+# API REST
 djangorestframework
+# Cliente HTTP para consumir la API de tipos de cambio
 requests
+# Carga variables desde .env en entorno local
 python-dotenv

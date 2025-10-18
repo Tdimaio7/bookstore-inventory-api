@@ -1,0 +1,55 @@
+{
+  "info": {
+    "name": "Bookstore Inventory API",
+    "_postman_id": "b6f8c1f8-1234-4cde-9abc-000000000001",
+    "description": "Colección de endpoints para pruebas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:8000/books/", "host": ["http://localhost:8000"], "path": ["books", ""] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"El Quijote\",\n  \"author\": \"Miguel de Cervantes\",\n  \"isbn\": \"978-84-376-0494-7\",\n  \"cost_usd\": 15.99,\n  \"stock_quantity\": 25,\n  \"category\": \"Literatura Clásica\",\n  \"supplier_country\": \"ES\"\n}"
+        }
+      }
+    },
+    {
+      "name": "List Books",
+      "request": { "method": "GET", "url": "http://localhost:8000/books/" }
+    },
+    {
+      "name": "Get Book by ID",
+      "request": { "method": "GET", "url": "http://localhost:8000/books/1/" }
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": "http://localhost:8000/books/1/",
+        "body": { "mode": "raw", "raw": "{ \"title\": \"El Quijote\", \"author\": \"Miguel de Cervantes\", \"isbn\": \"978-84-376-0494-7\", \"cost_usd\": 16.50, \"stock_quantity\": 30, \"category\": \"Literatura Clásica\", \"supplier_country\": \"ES\" }" }
+      }
+    },
+    {
+      "name": "Delete Book",
+      "request": { "method": "DELETE", "url": "http://localhost:8000/books/1/" }
+    },
+    {
+      "name": "Search by Category",
+      "request": { "method": "GET", "url": "http://localhost:8000/books/search/?category=Literatura%20Clásica" }
+    },
+    {
+      "name": "Low Stock",
+      "request": { "method": "GET", "url": "http://localhost:8000/books/low-stock/?threshold=10" }
+    },
+    {
+      "name": "Calculate Price",
+      "request": { "method": "POST", "url": "http://localhost:8000/books/1/calculate-price/" }
+    }
+  ]
+}
